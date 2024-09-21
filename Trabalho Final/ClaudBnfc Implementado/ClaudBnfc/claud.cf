@@ -1,0 +1,56 @@
+Sst.    S::= "main Claud ( kd gaucho )" Block ;
+
+LBlock. Block ::= "{" CMDS "}" ;  
+
+rules   CMDS ::= CMD | CMD CMDS ;
+
+rules   CMD ::= ATB | SE | ATE | FAZAI | CLAUDDIZ | RECEBA | CONST | VET | FUNC | GOTO | LABEL | STRUCT | POINT; 
+
+rules   ATB ::= Type Ident "=" VALUE ";" | Type Ident "=" EXP ";" ;
+
+rules   EXP ::= VALUE OPerA VALUE | EXP OPerA VALUE ;
+
+rules   SE ::= "SE BAH" "(" OPL ")" Block |  "SE BAH" "(" OPL ")" Block "TCHE" Block ;
+
+rules   OPerL ::= ">" | ">=" | "<" | "<=" | "==" | "<>" ;
+
+rules   OPerA ::= "/" | "*" | "+" | "-"  ;
+
+rules   OPL ::= VALUE OPerL VALUE ;
+
+rules   CLAUDDIZ ::= "ClaudDiz" "(" VALUE ")" ";" ;
+
+rules   RECEBA  ::= "Receba" "("Type Ident ")" ";" ;
+
+rules   ATE ::= "ATE" "(" OPL ")" Block ;
+
+rules   FAZAI ::= "FAZAI" "(" Type Ident "=" VALUE "|" OPL "|" Integer ")" Block ;
+
+rules   VALUE ::= Ident | String | Integer | Double ;
+
+rules   Type ::= "interu" | "floaty" | "stringo" ;
+
+rules   VET ::= Type Ident "[" Integer "]" ";" | "int" Ident "[" Integer "]" "=" "[" ConjInt "]" ";" |
+"float" Ident "[" Integer "]" "=" "[" ConjReal "]" ";" | "string" Ident "[" Integer "]" "=" "[" ConjString "]" ";";
+
+rules   STRUCT ::= "ISTRUCT" "[" Integer "]" "=" "{" HeteroElements "}" ";";
+rules   HeteroElements ::= HeteroElement | HeteroElement "," HeteroElements;
+rules   HeteroElement ::= String | Double | Integer;
+
+rules   FUNC ::= "FUNC" Ident "(" ")" Block;
+
+rules   GOTO ::= "GOTO" Integer ";" ;
+
+rules   LABEL ::= "LABEL" Integer ":" Block;
+
+rules   ConjInt ::= Integer | Integer "," ConjInt;
+rules   ConjReal ::= Double | Double "," ConjReal;
+rules   ConjString ::= String | String"," ConjString;
+
+LConst. CONST ::= "CONST" Type Ident "=" VALUE ";" ;
+
+LPoint. POINT ::= Type "*" Ident "=" Ident ";" ;
+
+comment "#" ;
+comment "/*" "*/" ;
+

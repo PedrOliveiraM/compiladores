@@ -1,0 +1,24 @@
+main Claud( kd gaucho ) {
+# o programa faz varias coisas
+    interu vetor[6];
+    stringo vector[5];
+    floaty  array[10];
+
+    int vetor[4] = [6, 7 , 8 , 9] ; 
+    float vetor[2] = [3.1415, 7.14 , 8.22 , 0.7] ; 
+    string vetor[3] = ["Pedro", "ATILA" , "DaNiEl" , "Igor77"] ; 
+
+
+    FUNC minhaFuncao() {
+        ClaudDiz( "Informe seu nome?" );
+        Receba( stringo resposta );
+        GOTO 14;
+    }
+
+    LABEL 14 : {
+        ClaudDiz( resposta );
+    }
+
+    ISTRUCT[3] = {"PEDRO" , 175 , 78.5 } ;
+}
+

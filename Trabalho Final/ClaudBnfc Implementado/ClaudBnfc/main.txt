@@ -1,0 +1,5 @@
+main Claud ( kd gaucho ) {
+	
+	ClaudDiz("hellow gauchuu" );
+
+}
