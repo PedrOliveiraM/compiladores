@@ -1,0 +1,42 @@
+main Claud( kd gaucho ) {
+# o programa faz varias coisas
+    
+    ClaudDiz ( "Informe seu nome" );
+    Receba(stringo nome);
+
+    ClaudDiz ( "Informe sua idade" );
+    Receba(interu idade);
+
+    ClaudDiz ( "Informe seu peso" );
+    Receba(floaty peso);
+
+    ClaudDiz ( "Informe sua altura" );
+    Receba(floaty altura);
+
+    FAZAI ( interu i = 0| i < 10 | 1 ){
+        ClaudDiz(i);
+    }
+
+    floaty imc = peso/altura*2;
+    ClaudDiz(imc);
+    
+    FAZAI ( interu cont = 0 | cont < idade | 1 ) {
+        ClaudDiz(idade);
+    }
+    
+    interu *Pvar = cont2;
+
+    interu cont2 = 0;
+    ATE ( cont2 < idade ) {
+        ClaudDiz(cont2);
+    }
+
+    SE BAH (imc > 16 ) {
+	 ClaudDiz("ta gordo d+");
+    } TCHE {
+	 ClaudDiz("Ta de boa");	
+    }	
+
+    
+}
+
